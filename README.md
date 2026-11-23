@@ -1,7 +1,7 @@
 # 🌧️ Sri Lanka Heavy-Rain Early Warning: Ensemble Learning
 
-**Author:** `<Your Name>` (`<Your ID>`) · Machine Learning – Ensemble Learning assignment
-**🎥 Video presentation:** `<paste your YouTube / Google Drive link here>`
+**Author:** `Sinthujan.S` (`225105M`) · Machine Learning – Ensemble Learning assignment
+
 
 Predicts whether a Sri Lankan town will receive **heavy rain (≥ 10 mm) tomorrow** from today's weather. The project compares
 **Bagging** (Random Forest, Extra Trees), **Boosting** (AdaBoost, Gradient Boosting, XGBoost, LightGBM, CatBoost),
@@ -28,7 +28,6 @@ of them in an interactive **Streamlit** dashboard.
 ├── models/
 │   ├── *.joblib                            ← 12 trained pipelines (preprocessing + model)
 │   └── metrics.csv, meta.json, …           ← test-set results shown in the dashboard
-├── slides/                                 ← slide images used in the presentation video
 └── .streamlit/config.toml                  ← dashboard theme
 ```
 
