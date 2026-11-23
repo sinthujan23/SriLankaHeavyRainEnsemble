@@ -48,11 +48,6 @@ streamlit run app.py
 
 The trained models are included, so step 3 works straight after `pip install`.
 
-## Generative-AI disclosure
-
-This project was developed with help from **Claude (Anthropic), used through Claude Code**. It generated the code for
-data collection, preprocessing, modelling and the dashboard, the slide images, and it drafted the explanations and a
-suggested narration script. The video was recorded by the student. See Section 13 of the notebook.
 
 ## Data source
 
