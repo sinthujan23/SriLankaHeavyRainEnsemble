@@ -1,0 +1,181 @@
+{
+  "num_features": [
+    "latitude",
+    "longitude",
+    "elevation",
+    "temp_max_c",
+    "temp_min_c",
+    "temp_mean_c",
+    "temp_range",
+    "rain_mm",
+    "rain_lag1",
+    "rain_3d_sum",
+    "rain_7d_sum",
+    "rain_days_7d",
+    "humidity_pct",
+    "humidity_change_1d",
+    "dew_point_c",
+    "dewpoint_depression",
+    "specific_humidity_gkg",
+    "pressure_hpa",
+    "pressure_change_1d",
+    "cloud_cover_pct",
+    "wind_speed_ms",
+    "wind_max_ms",
+    "wind_dir_sin",
+    "wind_dir_cos",
+    "solar_rad_mj",
+    "soil_wetness_top",
+    "soil_wetness_root",
+    "doy_sin",
+    "doy_cos"
+  ],
+  "cat_features": [
+    "city",
+    "province",
+    "climate_zone",
+    "monsoon_season"
+  ],
+  "heavy_rain_mm": 10.0,
+  "train_period": [
+    "2016-01-07",
+    "2024-12-31"
+  ],
+  "test_period": [
+    "2025-01-01",
+    "2026-10-30"
+  ],
+  "n_train": 65640,
+  "n_test": 13360,
+  "pos_rate_train": 0.15342778793418646,
+  "pos_rate_test": 0.17739520958083832,
+  "best_model": "Random Forest",
+  "models": [
+    {
+      "name": "Logistic Regression",
+      "family": "Baseline",
+      "file": "logistic_regression.joblib"
+    },
+    {
+      "name": "Decision Tree",
+      "family": "Baseline",
+      "file": "decision_tree.joblib"
+    },
+    {
+      "name": "Neural Network (ANN)",
+      "family": "Baseline",
+      "file": "neural_network__ann.joblib"
+    },
+    {
+      "name": "Random Forest",
+      "family": "Bagging",
+      "file": "random_forest.joblib"
+    },
+    {
+      "name": "Extra Trees",
+      "family": "Bagging",
+      "file": "extra_trees.joblib"
+    },
+    {
+      "name": "AdaBoost",
+      "family": "Boosting",
+      "file": "adaboost.joblib"
+    },
+    {
+      "name": "Gradient Boosting",
+      "family": "Boosting",
+      "file": "gradient_boosting.joblib"
+    },
+    {
+      "name": "XGBoost",
+      "family": "Boosting",
+      "file": "xgboost.joblib"
+    },
+    {
+      "name": "LightGBM",
+      "family": "Boosting",
+      "file": "lightgbm.joblib"
+    },
+    {
+      "name": "CatBoost",
+      "family": "Boosting",
+      "file": "catboost.joblib"
+    },
+    {
+      "name": "Stacking (RF+LGBM+ANN\u2192LR)",
+      "family": "Stacking",
+      "file": "stacking__rf_lgbm_ann_lr.joblib"
+    },
+    {
+      "name": "Hybrid RF + ANN",
+      "family": "Hybrid",
+      "file": "hybrid_rf___ann.joblib"
+    }
+  ],
+  "by_zone": [
+    {
+      "climate_zone": "Dry",
+      "days": 6680.0,
+      "heavy_rain_rate": 0.141,
+      "f1": 0.553,
+      "recall": 0.657,
+      "roc_auc": 0.882
+    },
+    {
+      "climate_zone": "Intermediate",
+      "days": 2004.0,
+      "heavy_rain_rate": 0.203,
+      "f1": 0.592,
+      "recall": 0.703,
+      "roc_auc": 0.847
+    },
+    {
+      "climate_zone": "Wet",
+      "days": 4676.0,
+      "heavy_rain_rate": 0.219,
+      "f1": 0.574,
+      "recall": 0.667,
+      "roc_auc": 0.834
+    }
+  ],
+  "by_season": [
+    {
+      "monsoon_season": "First Inter-monsoon",
+      "days": 2440.0,
+      "heavy_rain_rate": 0.158,
+      "f1": 0.466,
+      "recall": 0.561,
+      "roc_auc": 0.802
+    },
+    {
+      "monsoon_season": "NE Monsoon",
+      "days": 2980.0,
+      "heavy_rain_rate": 0.173,
+      "f1": 0.45,
+      "recall": 0.533,
+      "roc_auc": 0.799
+    },
+    {
+      "monsoon_season": "SW Monsoon",
+      "days": 6120.0,
+      "heavy_rain_rate": 0.103,
+      "f1": 0.482,
+      "recall": 0.517,
+      "roc_auc": 0.87
+    },
+    {
+      "monsoon_season": "Second Inter-monsoon",
+      "days": 1820.0,
+      "heavy_rain_rate": 0.461,
+      "f1": 0.739,
+      "recall": 0.917,
+      "roc_auc": 0.826
+    }
+  ],
+  "stacking_meta_weights": {
+    "rf": -0.785,
+    "lgbm": 6.829,
+    "ann": -0.233
+  },
+  "rf_oob_score": 0.8506703229737964
+}
