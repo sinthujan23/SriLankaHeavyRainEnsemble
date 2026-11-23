@@ -2,8 +2,6 @@
 Sri Lanka Heavy-Rain Early-Warning: Ensemble Learning Dashboard
 Run:  streamlit run app.py
 (Requires the artefacts produced by Ensemble_Learning_SL_Heavy_Rain.ipynb in ./models and ./data)
-
-Generative-AI disclosure: this dashboard was generated with the help of Claude (Anthropic) via Claude Code.
 """
 import inspect
 import json
@@ -93,7 +91,7 @@ st.caption(f"Predicts whether a Sri Lankan town will receive **≥ {meta['heavy_
 
 # Navigation: a keyed radio keeps the selected page across reruns (st.tabs jumps back to the first tab
 # whenever a slider on another tab changes).
-PAGES = ["🏠 Overview", "🔮 Predict", "📊 Compare models", "🌲 Feature importance", "ℹ️ Method & AI disclosure"]
+PAGES = ["🏠 Overview", "🔮 Predict", "📊 Compare models", "🌲 Feature importance", "ℹ️ Method"]
 PAGE = st.radio("Page", PAGES, horizontal=True, key="page", label_visibility="collapsed")
 st.divider()
 
@@ -352,7 +350,7 @@ if PAGE == "🌲 Feature importance":
             "several days. Boosting models also use the town and monsoon season to learn regional corrections.")
 
 # ================================================================== ABOUT
-if PAGE == "ℹ️ Method & AI disclosure":
+if PAGE == "ℹ️ Method":
     st.subheader("ℹ️ Method")
     st.markdown(f"""
 * **Data (local, Sri Lankan):** NASA POWER daily weather (MERRA-2 reanalysis with bias-corrected rainfall) for **20 towns across all 9
@@ -367,10 +365,4 @@ if PAGE == "ℹ️ Method & AI disclosure":
   5-fold out-of-fold) · **Hybrid** (Random Forest + ANN soft voting).
 * **Limitations:** reanalysis rainfall is a ~50 km grid average, so it smooths extreme local downpours. Thresholds and inputs are daily totals,
   not radar or satellite nowcasts. Use as a decision-support demo, not an official warning.
-""")
-    st.subheader("🤖 Generative-AI disclosure")
-    st.markdown("""
-This dashboard and the accompanying notebook were developed with help from **Claude (Anthropic), used through Claude Code**.
-It generated the data-collection, preprocessing, modelling and dashboard code and drafted the explanations and video script.
-All code was run and the results checked by the student. See Section 13 of the notebook for the full statement.
 """)
