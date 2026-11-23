@@ -1,0 +1,26 @@
+# Assignment brief from the lecturer (not part of the submission code)
+*.docx
+~$*
+
+# CatBoost training logs (re-created every run)
+catboost_info/
+
+# Python / Jupyter clutter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+
+# Video recordings (upload to YouTube/Drive instead; too big for GitHub)
+*.mp4
+*.mov
+*.mkv
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
